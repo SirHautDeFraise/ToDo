@@ -13,12 +13,15 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    TextView textView1;
+
+    private TextView msg;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        textView1=(TextView)findViewById(R.id.textView1);
+
+        msg=(TextView)findViewById(R.id.textMsg);
         Intent intent=new Intent(MainActivity.this,TodoCreateActivity.class);
         startActivityForResult(intent, 2);// Activity is started with requestCode 2
     }
@@ -28,11 +31,17 @@ public class MainActivity extends AppCompatActivity {
     {
         super.onActivityResult(requestCode, resultCode, data);
         // check if the request code is same as what is passed  here it is 2
-        if(requestCode==2)
+        if(resultCode == TodoCreateActivity.RESULT_OK)
         {
+
             String message=data.getStringExtra("MESSAGE");
-            textView1.setText(message);
+            msg.setText(message);
         }
+    }
+
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
     }
 
     @Override
