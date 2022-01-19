@@ -40,4 +40,14 @@
         app:layout_constraintStart_toStartOf="@+id/btnAdd"
         app:layout_constraintTop_toBottomOf="@+id/btnAdd" />
 
+    <Spinner
+        android:id="@+id/spinnerUrgency"
+        android:layout_width="180dp"
+        android:layout_height="27dp"
+        android:spinnerMode="dropdown"
+        app:layout_constraintBottom_toTopOf="@+id/btnAdd"
+        app:layout_constraintEnd_toEndOf="@+id/editTask"
+        app:layout_constraintStart_toStartOf="@+id/editTask"
+        app:layout_constraintTop_toBottomOf="@+id/editTask" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
