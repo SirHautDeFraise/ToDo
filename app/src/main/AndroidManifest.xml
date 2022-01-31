@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ToDo">
         <activity
-            android:name=".TodoCreateActivity"
+            android:name=".addTodoActivity"
             android:exported="false"
             android:parentActivityName=".MainActivity" />
         <activity
