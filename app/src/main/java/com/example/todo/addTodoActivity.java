@@ -32,13 +32,11 @@ public class addTodoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_todo);
 
-        //Récupération des éléments de layout
         tvNameTodo = findViewById(R.id.tvNameTodo);
         spnUrgency = findViewById(R.id.spnUrgency);
         btnAdd = findViewById(R.id.btnAdd);
         btnCancel = findViewById(R.id.btnCancel);
 
-        // Initialisations des degrès d'urgence pour le spinner
         String[] urgencies = new String[]{
                 getString(R.string.spn_urgency_low_urgency),
                 getString(R.string.spn_urgency_medium_urgency),
@@ -47,15 +45,12 @@ public class addTodoActivity extends AppCompatActivity {
 
         final List<String> urgenciesList = new ArrayList<>(Arrays.asList(urgencies));
 
-        // Initializing an ArrayAdapter
         final ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(
                 this,R.layout.spinner_urgency_item,urgenciesList);
 
         spinnerArrayAdapter.setDropDownViewResource(R.layout.spinner_urgency_item);
         spnUrgency.setAdapter(spinnerArrayAdapter);
 
-
-        //Ajout du boutton de retour sur le menu
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
